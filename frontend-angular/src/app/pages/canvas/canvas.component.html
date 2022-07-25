@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="panel">
+      <div class="toolbar">
+        <div class="active">Brush</div>
+      </div>
+      <div class="settings">
+        <div>Thickness <input [(ngModel)]="thickness" type="number" min="1"></div>
+        <div>Color <input [(ngModel)]="color" type="color" ></div>
+      </div>
+    </div>
+  
+    
+    <div class="canvas-body">
+      <canvas #canvas width="500" height="500"></canvas>
+    </div>
+</div>
+
+<div *ngIf="isConnect" class="overlay">
+    <div class="modal-window">
+        <input [(ngModel)]="name" type="text" placeholder="Enter name">
+        <div class="connect-btn">
+            <button [disabled]="!name.length" (click)="connect()">Connect</button>
+        </div>
+    </div>
+</div>
+
+
+  
